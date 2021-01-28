@@ -1,0 +1,44 @@
+<%- include('partials/header.ejs') %>
+    
+    <main class="add-form-one">
+        <section class="add-post">
+            <div class="post-head">
+                <h3>ADD NEW POST</h3>
+            </div>
+
+            <div class="post-all">
+                <div class="post-list"> 
+                    <form class="add-form" action="/add" method="POST" enctype="multipart/form-data">
+                        <p>pick an image</p>
+                        <div class="input-files" >
+                            <input type="file" name="file" id="file" accept="image/*">
+                        </div>
+
+                        <div>
+                            <input class="input-feilds" name="title" type="text"  placeholder="title">
+                        </div>
+
+                        <div>
+                            <hr>
+                            <label for="">select catagory</label>
+                            <select  class="input-feilds" id="" name="catagory">
+                                <option value="health">health</option>
+                                <option value="Business">Business</option>
+                                <option value="Money">Money</option>
+                                <option value="Lifestyle">Lifestyle</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <textarea class="input-feilds" name="discription" cols="300" rows="10"></textarea>
+                        </div>
+            
+                        <button class="input-feilds add-btn"> SUBMIT </button>
+                    </form>
+                    
+                </div>
+            </div>
+        </section>
+    </main>
+
+<%- include('partials/footer.ejs') %>

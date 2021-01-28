@@ -1,0 +1,39 @@
+<%- include('partials/header.ejs') %>
+
+  
+    <main class="add-form-user onLogin">
+        <section class="register-login">
+            <div class="reg-head">
+                <h3>REGISTER NEW USER</h3>
+            </div>
+            <div class="reg-all">
+                <div class="reg-list">
+                    <form class="add-form" action="/register" method="POST">
+                
+                        <div>
+                            <input class="input-feilds" type="text" name="name"  placeholder="Name">
+                        </div>
+                        <div>
+                            <input class="input-feilds" name="email" type="email"  placeholder="Email">
+                        </div>
+
+                        <div>
+                            <input id="password1" name="password1" class="input-feilds" type="password"  placeholder="new password">
+                        </div>
+                        <div>
+                            <input id="password2" name="password2" class="input-feilds " type="password"  placeholder="confirm password">
+                        </div>
+            
+                        <button type="submit" id="checkreg" class="input-feilds  reg-btn"> REGISTER </button>
+                    </form>
+                    
+                </div>
+            </div>
+        </section>
+        <section class="space">
+
+        </section>
+    </main>
+
+<script src="/public/register.js"></script>
+<%- include('partials/footer.ejs') %>

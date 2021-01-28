@@ -1,0 +1,32 @@
+<%- include('partials/header.ejs') %>
+
+  
+<main class="add-form-user">
+    <section class="register-login">
+        <div class="reg-head">
+            <h3>USER LOGIN</h3>
+        </div>
+
+        <div class="reg-all">
+            <div class="reg-list">
+                <form class="add-form" action="/login" method="POST">
+                    <div>
+                        <input name="username" class="input-feilds" type="email"  placeholder="Email">
+                    </div>
+                    <div>
+                        <input name="password" class="input-feilds" type="password"  placeholder="password">
+                    </div>
+                    <button class="input-feilds reg-btn"> LOGIN </button>
+                </form>
+            </div>
+            <div class="user-inform">
+                <p><a href="/register">Register</a></p>
+            </div>
+        </div>
+
+    </section>
+
+</main>
+
+
+<%- include('partials/footer.ejs') %>

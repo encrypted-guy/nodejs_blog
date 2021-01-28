@@ -1,0 +1,98 @@
+<%- include('partials/header.ejs') %>
+    
+
+
+<main>
+    <% if(user){ %>
+        <% if(user.id == user_id){ %>
+            <div class="setting">
+                <i class="fas fa-cog fa-lg"></i>
+            </div>
+        <% } %>
+    <% } %>
+    <!-- The Modal -->
+    <div class="modal-user">
+        <div class="modal-content-user">
+            <span class="close">&times;</span>
+            <div class="modeluser-items">
+                <p>Change Your account Name</p>
+                <form action="/user/edit/<%= user_id %>" method="POST">
+                    <input name="name" type="text" placeholder="Enter new Name here" name="" id="">
+                    <button class="updateuser">UPDATE</button>
+                </form>
+
+                <br><hr><br>
+                <p>LOG OUT</p>
+                <a href="/logout">
+                    <button class="Remove-acount">LOG OUT</button>
+                </a>
+            </div>
+        </div>
+    </div>
+    <section class="user">
+        <div class="user-box">
+            <div class="user-img">
+                <img class="proimg" src="/public/profile.png" alt="">
+            </div>
+            <div class="profile-value">
+                <ul>
+                    <li>writer</li>
+                    <li> <%= name %> </li>
+                    <li>joined us on <%= date %> </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="user-each">
+        <div class="head-user">
+            <h3>MY POSTS</h3>
+            <% if(user){ %>
+                <% if(user.id == user_id){ %>
+                    <a href="/<%= user.name %>/add">
+                        <button class="add-post-btn"> <i class="fas fa-plus"></i> </button>
+                    </a>
+                <% } %>
+            <% } %>
+        </div>
+
+        <div class="user-all">
+            <div class="user-list">
+                
+                <% for(let i= 0; i < post_belong.length; i++) { %>
+                    <div class="user-one">
+                        <img class="blogimg" src="<%= post_belong[i].imgurl %>" alt="">
+                        <a href="/post/<%= post_belong[i]._id %>">
+                            <h4><%= post_belong[i].title %></h4>   
+                        </a>
+                        <% if(user){ %>
+                            <% if(user.id == post_belong[i].author){ %>
+                                <hr>
+                                <div class="modelpost-items">
+                                    <a href="/post/delete/<%= post_belong[i]._id %>">
+                                        <button class="Remove-post">Remove</button>
+                                    </a>
+                                    <a href="/post/@<%= name %>/edit/<%= post_belong[i]._id %>">
+                                        <button class="edit-post">EDIT</button>
+                                    </a>
+                                </div>
+                            <% } %>
+                        <% } %>
+                    </div>
+
+                <% } %>
+                
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+</main>
+
+
+
+<%- include('partials/footer.ejs') %>

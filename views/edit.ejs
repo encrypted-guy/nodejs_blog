@@ -1,0 +1,49 @@
+<%- include('partials/header.ejs') %>
+    
+    
+    <main class="add-form-one">
+        <section class="add-post">
+            <div class="post-head">
+                <h3>EDIT POST</h3>
+            </div>
+
+            <div class="post-all">
+                <div class="post-list">
+                    
+                    <form class="add-form" action="/post/edit/<%= post._id %>" method="POST" >
+                        
+                        <div>
+                            <p>sorry cant edit the image</p>
+                            <hr>
+                            <br>
+                        </div>
+
+                        <div>
+                            <input value="<%= post.title %>" class="input-feilds" name="title" type="text"  placeholder="title">
+                        </div>
+
+                        <div>
+                            <hr>
+                            <label for="">select catagory</label>
+                            <select  class="input-feilds" id="" name="catagory">
+                                <option value="health">health</option>
+                                <option value="Business">Business</option>
+                                <option value="Money">Money</option>
+                                <option value="Lifestyle">Lifestyle</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <textarea class="input-feilds" name="discription" id="editor" cols="300" rows="10"> <%= post.discription %> </textarea>
+                        </div>
+            
+                        <button class="input-feilds add-btn"> UPDATE </button>
+                    </form>
+                    
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+<%- include('partials/footer.ejs') %>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata|Teko&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <meta name="theme-color" content="#252c3b">
+    <link rel="stylesheet" href="/public/style.css">
+    <title>SIMPLE</title>
+</head>
+<body>
+    <header>
+        <a href="/">
+            <h3>SIMPLE</h3>
+        </a>
+        <nav class="responsive">
+            <ul>
+                <li><a href="/"><span class="menu-li">Home</span></a></li>
+                <li><a href="/catagory/health"><span class="menu-li">health</span></a></li>
+                <li><a href="/catagory/Business"><span class="menu-li">Business</span></a></li>
+                <li><a href="/catagory/Money"><span class="menu-li">Money</span></a></li>
+                <li><a href="/catagory/Lifestyle"><span class="menu-li">Lifestyle</span></a></li>
+                <% if(user){ %>
+                    <li><a href="/user/@<%= user.name %>/<%= user._id %>"><span class="menu-li none"> <img class="profile" src="/public/profile.png" alt=""> </span></a></li>
+                <% } else { %>
+                    <li><a href="/login"><span class="menu-li btn none">JOIN</span></a></li>
+                <% } %>
+            </ul>
+        </nav> 
+        <div class="nav-menu">
+            <ul>
+                <% if(user){ %>
+                    <li><a href="/user/@<%= user.name %>/<%= user._id %>"><img class="profile" src="/public/profile.png" alt=""></a></li>
+                <% } else { %>
+                    <li><a class="res-join btn" href="/login">JOIN</a></li>
+                <% } %>
+                <li class="menu"><i class="fas fa-bars fa-2x"></i></li>
+            </ul>
+        </div>
+    </header>
